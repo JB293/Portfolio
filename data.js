@@ -1,34 +1,24 @@
 const PROJECTS = [
   {
     id: 1,
-    title: "E-Commerce Platform",
-    description: "Application e-commerce complète avec panier, paiement Stripe, gestion des commandes et tableau de bord admin.",
+    title: "Gestion du personnel",
+    description: "Application de gestion du personnel avec gestion des demandes des utilisateurs, authentification, Dashboard.",
     image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80",
-    tags: ["React", "Node.js", "MongoDB", "Stripe"],
+    tags: ["PHP", "JavaScript", "MariaDB"],
     demo: "https://demo.exemple.com/ecommerce",
-    github: "https://github.com/votre-username/ecommerce",
+    github: "https://github.com/JB293/Projet-Gestion-personnel-",
     color: "from-blue-500 to-cyan-500",
   },
   
-  {
-    id: 2,
-    title: "Application Météo",
-    description: "Application météo avec géolocalisation, prévisions sur 7 jours, alertes météo et interface animée selon les conditions.",
-    image: "https://images.unsplash.com/photo-1504608524841-42584120d693?w=800&q=80",
-    tags: ["JavaScript", "API OpenWeather", "CSS3", "HTML5"],
-    demo: "https://demo.exemple.com/meteo",
-    github: "https://github.com/votre-username/meteo-app",
-    color: "from-cyan-500 to-blue-500",
-  },
  
   {
-    id: 3,
+    id: 2,
     title: "Portfolio",
     description: "Vous le visitez actuellement.",
     image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&q=80",
     tags: ["React", "Tailwind CSS"],
     demo: "https://demo.exemple.com/cms",
-    github: "https://github.com/votre-username/portfolio-cms",
+    github: "https://github.com/JB293/Portfolio",
     color: "from-green-500 to-teal-500",
   },
  
