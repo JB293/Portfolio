@@ -140,7 +140,7 @@ const { useState, useEffect, useRef } = React;
     
     function Hero() {
       const [typed, setTyped] = useState('');
-      const titles = ['Développeur Web', 'React Developer', 'Full-Stack Dev', 'UI/UX Enthusiast'];
+      const titles = ['Développeur Web', 'Full-Stack Dev'];
       const titleRef = useRef({ idx: 0, charIdx: 0, deleting: false });
 
       useEffect(() => {
@@ -187,11 +187,7 @@ const { useState, useEffect, useRef } = React;
 
           <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center">
             <div className="flex justify-center mb-8 animate-fade-in" style={{animationDelay:'0.3s'}}>
-              <div className="avatar-ring">
-                <div className="w-28 h-28 rounded-full bg-gradient-to-br from-slate-700 to-slate-800 flex items-center justify-center text-5xl border-4 border-slate-900">
-                  👨‍💻
-                </div>
-              </div>
+              
             </div>
 
            
@@ -211,7 +207,7 @@ const { useState, useEffect, useRef } = React;
               je transforme vos idées en produits digitaux impactants.
             </p>
 
-            {/* CTA Buttons */}
+            
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up" style={{animationDelay:'0.9s'}}>
               <button onClick={scrollToProjects} className="btn-primary px-8 py-4 rounded-xl font-semibold text-white text-base flex items-center gap-2 shadow-xl">
                 <i className="fa-solid fa-rocket" />
@@ -227,7 +223,7 @@ const { useState, useEffect, useRef } = React;
             <div className="mt-20 grid grid-cols-3 gap-6 max-w-md mx-auto animate-fade-in" style={{animationDelay:'1.1s'}}>
               {[
                 { value: '3+', label: 'Projets réalisés' },
-                { value: '3+', label: "Années d'expérience" },
+                // { value: '3+', label: "Années d'expérience" },
                 { value: '100%', label: 'Code propre' },
               ].map(stat => (
                 <div key={stat.label} className="text-center">
