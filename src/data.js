@@ -1,4 +1,4 @@
-const PROJECTS = [
+export const PROJECTS = [
   {
     id: 1,
     title: "Gestion du personnel",
@@ -24,7 +24,7 @@ const PROJECTS = [
  
 ];
 
-const SKILLS = [
+export const SKILLS = [
   { name: "HTML / CSS", icon: "fa-brands fa-html5", color: "#e34f26", level: 85 },
   { name: "JavaScript", icon: "fa-brands fa-js",    color: "#f7df1e", level: 90 },
   // { name: "React",      icon: "fa-brands fa-react", color: "#61dafb", level: 85 },
@@ -35,7 +35,7 @@ const SKILLS = [
   { name: "SQL",        icon: "fa-solid fa-database",   color: "#00758f", level: 80 },
 ];
 
-const NAV_LINKS = [
+export const NAV_LINKS = [
   { label: "Accueil",      href: "#accueil"     },
   { label: "Projets",      href: "#projets"     },
   { label: "Compétences",  href: "#competences" },
