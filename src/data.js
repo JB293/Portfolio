@@ -37,6 +37,7 @@ export const SKILLS = [
 
 export const NAV_LINKS = [
   { label: "Accueil",      href: "#accueil"     },
+  { label: "À propos",     href: "#apropos"     },
   { label: "Projets",      href: "#projets"     },
   { label: "Compétences",  href: "#competences" },
   { label: "Contact",      href: "#contact"     },

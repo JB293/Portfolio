@@ -241,12 +241,184 @@ import { PROJECTS, SKILLS, NAV_LINKS } from './data.js';
     }
 
    
+   
+    function About() {
+      const [cvOpen, setCvOpen] = useState(false);
+
+    
+      const CV_URL = '/CV_EBLIN_BILE_JOSEPH.pdf';
+
+      return (
+        <section id="apropos" className="py-24 px-4 sm:px-6 relative overflow-hidden">
+         
+          <div className="absolute top-0 right-0 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute bottom-0 left-0 w-72 h-72 bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
+
+          <div className="max-w-6xl mx-auto">
+         
+            <div className="text-center mb-16">
+              <h2 className="reveal section-title text-4xl sm:text-5xl font-extrabold text-white mb-6">
+                À Propos
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+              
+              <div className="reveal-left flex flex-col items-center gap-6">
+             
+                <div className="relative group">
+                  <div className="w-56 h-56 mx-auto rounded-full overflow-hidden border-4 border-blue-500/40 shadow-2xl shadow-blue-500/20">
+                     
+                      <img
+                        src="/public/photo.jpeg"
+                        alt="Joseph Eblin"
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                  </div>
+                 
+                  <div className="absolute bottom-2 right-2 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg flex items-center gap-1.5">
+                    <span className="w-2 h-2 bg-white rounded-full animate-pulse inline-block" />
+                    Disponible
+                  </div>
+                </div>
+              </div>
+
+             
+              <div className="reveal-right space-y-8">
+                
+                <div>
+                  <h3 className="text-2xl font-bold text-white mb-4">
+                    Bonjour, je suis <span className="gradient-text">Joseph Eblin</span> 
+                  </h3>
+                  <p className="text-slate-400 leading-relaxed text-base mb-4">
+                    Développeur web passionné basé à Abidjan, je conçois des applications modernes,
+                    performantes et accessibles. J'aime transformer des idées en produits digitaux
+                    soignés, du backend à l'interface utilisateur intuitive.
+                  </p>
+                  <p className="text-slate-400 leading-relaxed text-base">
+                    Toujours en veille technologique, je m'efforce d'apprendre et d'évoluer
+                    continuellement pour offrir les meilleures solutions à mes clients et partenaires.
+                  </p>
+                </div>
+
+               
+                <div className="glass border border-blue-500/20 rounded-2xl p-6">
+                  <div className="flex items-start gap-4 mb-6">
+                    <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg flex-shrink-0">
+                      <i className="fa-solid fa-file-pdf text-white text-2xl" />
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-bold text-white">Mon Curriculum Vitæ</h4>
+                      <p className="text-slate-400 text-sm mt-1">
+                        Retrouvez mes expériences, formations et compétences détaillées.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex flex-col sm:flex-row gap-3">
+                  
+                    <button
+                      onClick={() => setCvOpen(true)}
+                      className="flex-1 btn-primary py-3 rounded-xl font-semibold text-white flex items-center justify-center gap-2 shadow-lg"
+                    >
+                      <i className="fa-solid fa-eye" />
+                      Voir mon CV
+                    </button>
+
+                    
+                    <a
+                      href={CV_URL}
+                      download="CV_Joseph_Eblin.pdf"
+                      className="flex-1 btn-outline py-3 rounded-xl font-semibold text-blue-300 flex items-center justify-center gap-2"
+                    >
+                      <i className="fa-solid fa-download" />
+                      Télécharger
+                    </a>
+                  </div>
+                </div>
+
+               
+                <div className="space-y-4">
+                  <h4 className="text-sm font-semibold text-slate-500 uppercase tracking-widest">Parcours</h4>
+                  {[
+                    { year: '2024–Présent', label: 'Développeur Web Freelance', sub: 'Projets personnels & clients' },
+                    { year: '2023',         label: 'Formation Web Full-Stack',  sub: 'PHP · Laravel · React · SQL' },
+                    { year: '2022',         label: 'Découverte du développement', sub: 'HTML · CSS · JavaScript' },
+                  ].map((item, i) => (
+                    <div key={i} className="flex gap-4 items-start">
+                      <div className="flex flex-col items-center">
+                        <div className="w-3 h-3 bg-blue-500 rounded-full mt-1 flex-shrink-0" />
+                        {i < 2 && <div className="w-0.5 h-8 bg-blue-500/20 mt-1" />}
+                      </div>
+                      <div>
+                        <span className="text-xs text-blue-400 font-mono">{item.year}</span>
+                        <p className="text-sm font-semibold text-white">{item.label}</p>
+                        <p className="text-xs text-slate-500">{item.sub}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* ── Modal CV ── */}
+          {cvOpen && (
+            <div
+              className="fixed inset-0 z-50 flex items-center justify-center p-4"
+              style={{ background: 'rgba(0,0,0,0.85)' }}
+              onClick={() => setCvOpen(false)}
+            >
+              <div
+                className="glass border border-white/10 rounded-2xl w-full max-w-4xl max-h-[90vh] flex flex-col overflow-hidden shadow-2xl"
+                onClick={e => e.stopPropagation()}
+              >
+              
+                <div className="flex items-center justify-between p-4 border-b border-white/5">
+                  <div className="flex items-center gap-3">
+                    <i className="fa-solid fa-file-pdf text-blue-400 text-lg" />
+                    <span className="font-semibold text-white">CV — Joseph Eblin</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <a
+                      href={CV_URL}
+                      download="CV_Joseph_Eblin.pdf"
+                      className="btn-primary px-4 py-2 rounded-lg text-sm font-semibold text-white flex items-center gap-2"
+                    >
+                      <i className="fa-solid fa-download" />
+                      Télécharger
+                    </a>
+                    <button
+                      onClick={() => setCvOpen(false)}
+                      className="w-9 h-9 glass border border-white/5 rounded-lg flex items-center justify-center text-slate-400 hover:text-white transition-all"
+                    >
+                      <i className="fa-solid fa-xmark" />
+                    </button>
+                  </div>
+                </div>
+             
+                <div className="flex-1 overflow-hidden bg-slate-900/50 min-h-[60vh]">
+                  <iframe
+                    src={CV_URL}
+                    title="CV Joseph Eblin"
+                    className="w-full h-full min-h-[60vh]"
+                    style={{ border: 'none', minHeight: '60vh' }}
+                  />
+                </div>
+              </div>
+            </div>
+          )}
+        </section>
+      );
+    }
+
     function ProjectCard({ project, index }) {
       return (
         <div
           className={`reveal card-hover rounded-2xl overflow-hidden glass border border-white/5 flex flex-col delay-${(index % 3 + 1) * 100}`}
         >
-          {/* Image */}
+      
           <div className="relative overflow-hidden h-48">
             <img
               src={project.image}
@@ -685,6 +857,8 @@ import { PROJECTS, SKILLS, NAV_LINKS } from './data.js';
           <Navbar />
           <main>
             <Hero />
+            <div className="section-divider" />
+            <About />
             <div className="section-divider" />
             <Projects />
             <div className="section-divider" />
